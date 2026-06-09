@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-[#d68a62]">
 
-      {/* NAVBAR */}
+     
 
       <nav className="fixed top-0 w-full z-50 bg-[#b66742]/80 backdrop-blur-lg border-b border-white/10">
 
@@ -65,7 +65,7 @@ export default function Landing() {
 
       </nav>
 
-      {/* HERO */}
+     
 
       <section
         id="home"
@@ -125,7 +125,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ABOUT */}
+     
 
       <section
         id="about"
@@ -153,7 +153,7 @@ export default function Landing() {
 
       </section>
 
-      {/* FEATURES */}
+     
 
       <section
         id="features"
@@ -204,7 +204,7 @@ export default function Landing() {
 
       </section>
 
-      {/* CONTACT */}
+     
 
       <section
         id="contact"
@@ -229,7 +229,7 @@ export default function Landing() {
 
       </section>
 
-      {/* FOOTER */}
+    
 
       <footer className="bg-black text-white text-center py-6">
 

@@ -14,6 +14,9 @@ from "./routes/ProtectedRoute";
 import AdminRoute
 from "./routes/AdminRoute";
 
+import TableManagement
+from "./pages/TableManagement";
+
 function App() {
 
   return (
@@ -52,6 +55,17 @@ function App() {
             <ProtectedRoute>
               <AdminRoute>
                 <AdminDashboard />
+              </AdminRoute>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/tables"
+          element={
+            <ProtectedRoute>
+              <AdminRoute>
+                <TableManagement />
               </AdminRoute>
             </ProtectedRoute>
           }

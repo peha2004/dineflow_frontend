@@ -36,11 +36,11 @@ export default function Login() {
         });
 
       login(
-        data.token,
-        data.role
-      );
+  data.token,
+  data.user.role
+);
 
-      if (data.role === "ADMIN") {
+      if (data.user.role === "ADMIN") {
 
         navigate("/admin");
 
