@@ -1,135 +1,88 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
-export default function UserDashboard() {
+const navLinks = [
+  { to: "/tables", icon: "🍽️", label: "Tables", desc: "Browse available restaurant tables" },
+  { to: "/reservations/create", icon: "📅", label: "Make Reservation", desc: "Book a table for your visit" },
+  { to: "/reservations", icon: "📋", label: "My Reservations", desc: "View your booking history" },
+  { to: "/menu", icon: "🍔", label: "View Menu", desc: "Explore food and drinks" },
+  { to: "/qr", icon: "📱", label: "My QR Code", desc: "Access your booking quickly" },
+  { to: "/profile", icon: "👤", label: "Profile", desc: "Manage your account details" },
+];
 
+export default function UserDashboard() {
   const { logout } = useAuth();
 
   return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-pink-50">
 
-    <div className="min-h-screen bg-gray-100">
+      {/* Navbar */}
+      <nav className="bg-white border-b border-purple-100 shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white font-black shadow-md shadow-purple-200">
+              D
+            </div>
+            <span className="text-xl font-black bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              DineFlow
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link
+              to="/profile"
+              className="text-sm text-gray-500 hover:text-purple-600 transition font-medium hidden sm:block"
+            >
+              My Profile
+            </Link>
+            <button
+              onClick={logout}
+              className="text-sm px-4 py-2 rounded-xl bg-red-50 text-red-500 border border-red-100 hover:bg-red-100 transition font-medium"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      </nav>
 
      
-
-      <div className="bg-[#b66742] text-white p-5 flex justify-between items-center">
-
-        <h1 className="text-2xl font-bold">
-          DineFlow
-        </h1>
-
-        <button
-          onClick={logout}
-          className="bg-red-500 px-4 py-2 rounded"
-        >
-          Logout
-        </button>
-
-      </div>
-
-    
-
-      <div className="p-10">
-
-        <h1 className="text-4xl font-bold mb-8">
-          User Dashboard
-        </h1>
-
-        <div className="grid md:grid-cols-3 gap-6">
-
-          
-
-          <Link
-            to="/tables"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              🍽 View Available Tables
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              Browse available restaurant tables.
-            </p>
-          </Link>
-
-         
-
-          <Link
-            to="/reservations/create"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              📅 Make Reservation
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              Book a table for your visit.
-            </p>
-          </Link>
-
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+        <div className="relative bg-gradient-to-r from-purple-600 to-pink-500 rounded-3xl p-8 text-white overflow-hidden shadow-xl shadow-purple-200">
         
+          <div className="absolute -top-8 -right-8 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-0 left-1/2 w-32 h-32 bg-pink-300/20 rounded-full blur-2xl" />
 
-          <Link
-            to="/reservations"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              📋 My Reservations
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              View your booking history.
+          <div className="relative z-10">
+            <p className="text-purple-100 text-sm font-medium mb-1">Welcome back 👋</p>
+            <h1 className="text-3xl font-black mb-2">Your Dashboard</h1>
+            <p className="text-purple-100 text-sm max-w-sm">
+              Manage your reservations, explore the menu, and check your QR code — all in one place.
             </p>
-          </Link>
-
-       
-
-          <Link
-            to="/menu"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              🍔 View Menu
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              Explore food and drinks.
-            </p>
-          </Link>
-
-        
-
-          <Link
-            to="/qr"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              📱 Scan QR / Reservation Code
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              Access your booking quickly.
-            </p>
-          </Link>
-
-         
-
-          <Link
-            to="/profile"
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg"
-          >
-            <h2 className="text-2xl font-bold">
-              👤 Profile
-            </h2>
-
-            <p className="mt-2 text-gray-600">
-              Manage your account details.
-            </p>
-          </Link>
-
+          </div>
         </div>
-
       </div>
 
+      
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        <p className="text-xs font-bold tracking-widest uppercase text-purple-400 mb-5">
+          Quick Actions
+        </p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+          {navLinks.map(({ to, icon, label, desc }) => (
+            <Link
+              key={to}
+              to={to}
+              className="group bg-white border border-purple-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-purple-300 hover:-translate-y-1 transition duration-200"
+            >
+              <div className="w-12 h-12 bg-purple-50 border border-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+                {icon}
+              </div>
+              <h2 className="text-base font-bold text-gray-800 mb-1">{label}</h2>
+              <p className="text-sm text-gray-400">{desc}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
