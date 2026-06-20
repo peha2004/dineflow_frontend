@@ -23,16 +23,6 @@ interface Reservation {
   selectedItems: { name: string; price: number; quantity: number }[];
 }
 
-const FUNCTION_ICONS: Record<string, string> = {
-  BIRTHDAY: "🎂", PARTY: "🎉", NORMAL_DINING: "🍽️", ANNIVERSARY: "💍", CORPORATE: "💼",
-};
-const STATUS_STYLES: Record<string, string> = {
-  PENDING: "bg-amber-50 text-amber-600 border-amber-100",
-  CONFIRMED: "bg-green-50 text-green-600 border-green-100",
-  CANCELLED: "bg-red-50 text-red-500 border-red-100",
-  COMPLETED: "bg-blue-50 text-blue-600 border-blue-100",
-};
-
 export default function MyReservations() {
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [loading, setLoading] = useState(true);

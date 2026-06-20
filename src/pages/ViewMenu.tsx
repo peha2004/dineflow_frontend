@@ -20,11 +20,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   BEVERAGE: "🥤",
   DESSERT: "🍰",
 };
-const CATEGORY_COLORS: Record<string, string> = {
-  FOOD: "bg-orange-50 text-orange-600 border-orange-100",
-  BEVERAGE: "bg-blue-50 text-blue-600 border-blue-100",
-  DESSERT: "bg-pink-50 text-pink-600 border-pink-100",
-};
+
 
 export default function ViewMenu() {
   const [items, setItems] = useState<MenuItem[]>([]);
@@ -47,7 +43,7 @@ export default function ViewMenu() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-linear-to-br from-white via-purple-50 to-pink-50">
       <nav className="bg-white border-b border-purple-100 shadow-sm sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-4">
           <Link
@@ -57,17 +53,17 @@ export default function ViewMenu() {
             ← Dashboard
           </Link>
           <div className="flex items-center gap-2 ml-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white font-black text-sm">
+            <div className="w-8 h-8 rounded-xl bg-linear-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white font-black text-sm">
               D
             </div>
-            <span className="font-black bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            <span className="font-black bg-linear-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
               DineFlow
             </span>
           </div>
           <div className="ml-auto">
             <Link
               to="/reservations/create"
-              className="text-sm px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold rounded-xl hover:opacity-90 transition shadow-md shadow-purple-200"
+              className="text-sm px-4 py-2 bg-linear-to-r from-purple-600 to-pink-500 text-white font-bold rounded-xl hover:opacity-90 transition shadow-md shadow-purple-200"
             >
               Book a Table
             </Link>
@@ -137,7 +133,7 @@ export default function ViewMenu() {
           </p>
           <Link
             to="/reservations/create"
-            className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold rounded-2xl hover:opacity-90 transition shadow-md shadow-purple-200 text-sm"
+            className="inline-block px-6 py-3 bg-linear-to-r from-purple-600 to-pink-500 text-white font-bold rounded-2xl hover:opacity-90 transition shadow-md shadow-purple-200 text-sm"
           >
             Book a Table & Add Food →
           </Link>
