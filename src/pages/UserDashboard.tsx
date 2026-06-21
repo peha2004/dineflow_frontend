@@ -210,17 +210,6 @@ export default function UserDashboard() {
             </div>
           )}
         </div>
-
-        <div className="bg-purple-50 border border-purple-100 rounded-2xl p-5 flex items-start gap-3">
-          <span className="text-purple-400 text-lg mt-0.5">ℹ️</span>
-          <div>
-            <p className="text-sm font-bold text-purple-700 mb-0.5">How it works</p>
-            <p className="text-xs text-purple-500 leading-relaxed">
-              Choose a function type → pick a date & time → select a table → add food & drinks → confirm.
-              After booking you'll receive a QR code to show at the restaurant for easy check-in.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

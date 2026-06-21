@@ -13,11 +13,6 @@ import UserProfile from "./pages/UserProfile";
 
 
 import AdminDashboard from "./pages/AdminDashboard";
-import TableManagement from "./pages/TableManagement";
-import UserManagement from "./pages/UserManagement";
-import MenuManagement from "./pages/MenuManagement";
-
-
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminRoute from "./routes/AdminRoute";
 import ViewMenu from "./pages/ViewMenu";
@@ -60,20 +55,17 @@ function App() {
         <Route path="/admin" element={
           <ProtectedRoute><AdminRoute><AdminDashboard /></AdminRoute></ProtectedRoute>
         } />
-        <Route path="/admin/tables" element={
-          <ProtectedRoute><AdminRoute><TableManagement /></AdminRoute></ProtectedRoute>
-        } />
-        <Route path="/admin/users" element={
-          <ProtectedRoute><AdminRoute><UserManagement /></AdminRoute></ProtectedRoute>
-        } />
-        <Route path="/admin/menu" element={
-          <ProtectedRoute><AdminRoute><MenuManagement /></AdminRoute></ProtectedRoute>
-        } />
 
-        <Route
+<Route path="/admin" element={
+  <ProtectedRoute><AdminRoute><AdminDashboard /></AdminRoute></ProtectedRoute>
+} />
+
+<Route
   path="/reservation-code/:code"
   element={<ReservationDetail />}
 />
+
+
 
       </Routes>
     </BrowserRouter>
