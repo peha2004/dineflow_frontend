@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import ReservationCard from "../components/ReservationCard";
 
-const API = "http://localhost:5000/api";
+const API =  import.meta.env.VITE_API_URL;
 const authHeader = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } });
 
 interface Reservation {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
+const API =  import.meta.env.VITE_API_URL;
 const authHeader = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } });
 
 const FUNCTION_TYPES = ["BIRTHDAY", "PARTY", "NORMAL_DINING", "ANNIVERSARY", "CORPORATE"];
@@ -144,7 +144,7 @@ export default function CreateReservation() {
       </nav>
 
       <div className="max-w-3xl mx-auto px-4 py-10">
-        {/* Header */}
+      
         <div className="text-center mb-8">
           <h1 className="text-3xl font-black text-gray-900">Make a Reservation</h1>
           <p className="text-gray-400 text-sm mt-2">Book your perfect table in a few easy steps</p>
